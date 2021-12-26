@@ -1,15 +1,18 @@
+PImage ball;
+
 ArrayList<Bubble> bubbles = new ArrayList<Bubble>();
 final int id = (int)random(bubbles.size()-1);
 
  
 void setup(){
   //size(800,600);
-  fullScreen();
+  fullScreen(P2D);
   for(int i=0;i<width/7;i++){
     
     Bubble b = new Bubble(random(width),random(height),random(120),random(10)/3,random(10)/3,/*0=rect,else=circle */1);
     bubbles.add(b);
   }
+  ball = loadImage("ball.png");
 }
 
 void draw(){
