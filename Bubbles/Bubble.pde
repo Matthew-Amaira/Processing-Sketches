@@ -30,7 +30,8 @@ class Bubble{
     if(shape==0)
       rect(centreX-size/2,centreY-size/2,size,size);
     else
-      ellipse(centreX,centreY,size,size);
+      //ellipse(centreX,centreY,size,size);
+      image(ball,centreX-size/2,centreY-size/2,size,size);
   }
   
   void ascendBubble(){
