@@ -51,7 +51,8 @@ class Bubble{
  
   
   void activate(){
-    if(size >= 2*width){
+    
+    if(size >= 1.25*width){
       swap = !swap;
       unactivate = true;
       activate = false;
@@ -65,6 +66,8 @@ class Bubble{
     }
       
     if(activate){
+      centreX = width/2;
+      centreY = height/2;
       size += 5;
       speedX =0;
       speedY =0;
@@ -100,6 +103,14 @@ class Bubble{
   
   void setShape(int s){
     shape = s;
+  }
+  
+  boolean getActivate(){
+    return activate;
+  }
+  
+  boolean getUnActivate(){
+    return unactivate;
   }
   
   color getColor(){
