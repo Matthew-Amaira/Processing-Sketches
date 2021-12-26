@@ -14,17 +14,23 @@ class Bubble{
   private boolean activate;
   private boolean unactivate;
   
-  Bubble(float x, float y,float si, float spX, float spY){
+  private int shape;
+  
+  Bubble(float x, float y,float si, float spX, float spY, int shp){
     setCentreX(x);
     setCentreY(y);
     setSize(si);
     setXSpeed(spX);
     setYSpeed(spY);
     setActivate(false);
+    setShape(shp);
   }
   
   void displayBubble(){
-    ellipse(centreX,centreY,size,size);
+    if(shape==0)
+      rect(centreX-size/2,centreY-size/2,size,size);
+    else
+      ellipse(centreX,centreY,size,size);
   }
   
   void ascendBubble(){
@@ -90,6 +96,10 @@ class Bubble{
   
   void setActivate(boolean a){
     activate = a;
+  }
+  
+  void setShape(int s){
+    shape = s;
   }
   
   color getColor(){
