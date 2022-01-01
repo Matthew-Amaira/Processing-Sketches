@@ -29,6 +29,7 @@ void draw(){
 void mousePressed(){
   if(!bubbles.get(id).getActivate() && !bubbles.get(id).getUnActivate()){
     bubbles.get(id).setActivate(true);
+    if(bubbles.get(id).getColor()==color(0))
     bubbles.get(id).b = color((int)random(255),(int)random(255),(int)random(255));
   }
 }
