@@ -6,6 +6,8 @@ float rWidth;
 float rHeight;
 int point = 0;
 
+boolean swaps = false;
+
 void setup(){
 fullScreen();
 rWidth  = (0.8*width);
@@ -28,6 +30,7 @@ void draw(){
     }
     
     if(boxes[point].h < boxes[point+1].h){
+      swaps = true;
       Rectangle t = boxes[point];
       //float tempHeight = boxes[point].h;
       if(boxes[point].xTemp < (0.1*width)+((point+1)*boxes[point].widthTmp)-1){
@@ -50,7 +53,10 @@ void draw(){
     }
     
   }else{
-    
+    if(!swaps){
+      noLoop();
+    }
     point=0;
+    swaps = false;
   }
 }
