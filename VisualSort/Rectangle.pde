@@ -6,8 +6,7 @@ class Rectangle{
   float heightTmp;
   float xTemp;
   float yTemp;
-  
-  float dest = -1;
+
       
   Rectangle(int i){
     id =i;
